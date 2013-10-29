@@ -3,9 +3,12 @@ package com.nucleartesuji.powerstruggleeventplanner;
 import java.util.List;
 
 import com.nucleartesuji.powerstruggleeventplanner.game.Card;
+import com.nucleartesuji.powerstruggleeventplanner.game.SortableHand;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,9 +19,9 @@ import android.widget.TextView;
 public class CardAdapter extends ArrayAdapter<Card> {
 	Context context;
 	int layoutResourceId;
-	List<Card> cards;
+	SortableHand cards;
 
-	public CardAdapter(Context context, int layoutResourceId, List<Card> cards) {
+	public CardAdapter(Context context, int layoutResourceId, SortableHand cards) {
 		super(context, layoutResourceId, cards);
 		this.context = context;
 		this.layoutResourceId = layoutResourceId;
@@ -78,6 +81,16 @@ public class CardAdapter extends ArrayAdapter<Card> {
         holder.title.setText(card.getTitle());
         holder.text.setText(card.getText());
         displayMotivation(holder.motivation, card);
+        if (card.isStandardEvent()) {
+        	Log.d("TEST", "HELLO!!!!");
+        	if (cards.validOrder()) {
+        		row.setBackgroundColor(context.getResources().getColor(R.color.standardEventBackgroundColor));
+        	} else {
+        		row.setBackgroundColor(context.getResources().getColor(R.color.standardEventBackgroundColorError));        		
+        	}
+        } else {
+        	row.setBackgroundColor(context.getResources().getColor(R.color.defaultEventBackgroundColor));
+        }
         holder.buttonUp.setTag(position);
         holder.buttonDown.setTag(position);
         

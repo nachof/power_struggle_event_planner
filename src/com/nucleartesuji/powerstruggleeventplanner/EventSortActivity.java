@@ -1,18 +1,16 @@
 package com.nucleartesuji.powerstruggleeventplanner;
 
-import java.util.List;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.widget.ListView;
 
-import com.nucleartesuji.powerstruggleeventplanner.game.Card;
 import com.nucleartesuji.powerstruggleeventplanner.game.Deck;
+import com.nucleartesuji.powerstruggleeventplanner.game.SortableHand;
 
 public class EventSortActivity extends Activity {
 
-	private List<Card> cards;
+	private SortableHand cards;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

@@ -35,8 +35,8 @@ public class Deck {
 		this.standardCards = reader.readStandardCards();
 	}
 	
-	public List<Card> getDrawnCards() {
-		List<Card> drawnCards = new ArrayList<Card>();
+	public SortableHand getDrawnCards() {
+		SortableHand drawnCards = new SortableHand();
 		drawnCards.addAll(standardCards);
 		Collections.shuffle(otherCards);
 		drawnCards.addAll(otherCards.subList(0, 6));
@@ -62,46 +62,41 @@ public class Deck {
 		}
 		
 		public List<Card> readStandardCards() {
-			return readCardsUnderNodeNamed("standard");			
+			return readCardsUnderNodeNamed("standard", true);			
 		}
 
 		public List<Card> readCards() {
-			return readCardsUnderNodeNamed("other");
+			return readCardsUnderNodeNamed("other", false);
 		}
 
-		private List<Card> readCardsUnderNodeNamed(String baseTag) {
+		private List<Card> readCardsUnderNodeNamed(String baseTag, boolean isStandardEvent) {
 			Element root = dom.getDocumentElement();
 			Element cardsRoot = (Element) root.getElementsByTagName(baseTag).item(0);
-			List<Card> result = readCardsFromElement(cardsRoot);
-			return result;
-		}
-		
-		private List<Card> readCardsFromElement(Element base) {
-			List<Card> result = new ArrayList<Card>();
-			NodeList items = base.getElementsByTagName("card");
+			List<Card> result1 = new ArrayList<Card>();
+			NodeList items = cardsRoot.getElementsByTagName("card");
 			
-            for (int i=0;i<items.getLength();i++){
-            	Node item = items.item(i);
-            	NodeList properties = item.getChildNodes();
+			for (int i=0;i<items.getLength();i++){
+				Node item = items.item(i);
+				NodeList properties = item.getChildNodes();
 				Card.Builder cardBuilder = Card.getBuilder();
-            	for (int j=0; j < properties.getLength(); j++) {
-            		Node property = properties.item(j);
-            		String name = property.getNodeName().toLowerCase(Locale.getDefault());
-            		if (name.equals("title")) {
-            			cardBuilder.setTitle(property.getTextContent());
-            		} else if (name.equals("text")) {
-            			cardBuilder.setText(property.getTextContent());
-            		} else if (name.equals("motivationchange")) {
-            			cardBuilder.setMotivationChange(property.getTextContent());	            			
-            		} else {
-            			// Nothing
-            		}
-            	}
-            	
-            	result.add(cardBuilder.build());
-            }
-            
-            return result;
+				for (int j=0; j < properties.getLength(); j++) {
+					Node property = properties.item(j);
+					String name = property.getNodeName().toLowerCase(Locale.getDefault());
+					if (name.equals("title")) {
+						cardBuilder.setTitle(property.getTextContent());
+					} else if (name.equals("text")) {
+						cardBuilder.setText(property.getTextContent());
+					} else if (name.equals("motivationchange")) {
+						cardBuilder.setMotivationChange(property.getTextContent());	            			
+					} else {
+						// Nothing
+					}
+				}
+				cardBuilder.setStandardEvent(isStandardEvent);
+				result1.add(cardBuilder.build());
+			}
+			List<Card> result = result1;
+			return result;
 		}
 	}
 
