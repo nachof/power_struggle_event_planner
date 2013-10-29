@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
@@ -19,19 +20,28 @@
             android:id="@+id/cardTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:text="&lt;Card Title>"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            tools:ignore="HardcodedText" />
+
         <TextView
             android:id="@+id/cardText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
-        </LinearLayout>
+            android:text="&lt;Card Description. Can be long. Can be short. Can be something in between.>"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/cardMotivation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:text="-1"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/negativeMotivation"
+        tools:ignore="HardcodedText" />
 
     <ImageView
         android:id="@+id/buttonUp"
