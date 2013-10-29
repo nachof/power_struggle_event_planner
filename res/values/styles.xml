@@ -16,7 +16,7 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
-    <color name="negativeMotivation">#FFFF0000</color>
-    <color name="positiveMotivation">#FF00FF00</color>
+    <color name="negativeMotivation">#FFAA0000</color>
+    <color name="positiveMotivation">#FF00AA00</color>
 
 </resources>
