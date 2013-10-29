@@ -86,9 +86,9 @@ public class CardAdapter extends ArrayAdapter<Card> {
 
 	private void displayMotivation(TextView view, Card card) {
 		if (card.getMotivationChange() == 0) {
-			view.setVisibility(0);
+			view.setVisibility(View.GONE);
 		} else {
-			view.setVisibility(1);
+			view.setVisibility(View.VISIBLE);
 			if (card.getMotivationChange() > 0) {
 				view.setText("+" + card.getMotivationChange());
 				view.setTextColor(context.getResources().getColor(R.color.positiveMotivation));
