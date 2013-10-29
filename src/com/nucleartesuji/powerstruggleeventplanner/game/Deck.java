@@ -1,0 +1,108 @@
+package com.nucleartesuji.powerstruggleeventplanner.game;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Locale;
+
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+public class Deck {
+	private static Deck instance = null;
+	
+	public static Deck getInstance() {
+		if (instance == null) {
+			instance = new Deck();
+		}
+		return instance;
+	}
+
+	private List<Card> standardCards;
+	private List<Card> otherCards;
+
+	public void loadCardsData(InputStream dataStream) {
+		Loader reader = new Loader(dataStream);
+		this.otherCards = reader.readCards();
+		this.standardCards = reader.readStandardCards();
+	}
+	
+	public List<Card> getDrawnCards() {
+		List<Card> drawnCards = new ArrayList<Card>();
+		drawnCards.addAll(standardCards);
+		Collections.shuffle(otherCards);
+		drawnCards.addAll(otherCards.subList(0, 6));
+		return drawnCards;
+	}
+	
+	private class Loader {
+		Document dom;
+
+		public Loader(InputStream dataStream) {
+			try {
+				dom = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(dataStream);
+			} catch (SAXException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (ParserConfigurationException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		public List<Card> readStandardCards() {
+			return readCardsUnderNodeNamed("standard");			
+		}
+
+		public List<Card> readCards() {
+			return readCardsUnderNodeNamed("other");
+		}
+
+		private List<Card> readCardsUnderNodeNamed(String baseTag) {
+			Element root = dom.getDocumentElement();
+			Element cardsRoot = (Element) root.getElementsByTagName(baseTag).item(0);
+			List<Card> result = readCardsFromElement(cardsRoot);
+			return result;
+		}
+		
+		private List<Card> readCardsFromElement(Element base) {
+			List<Card> result = new ArrayList<Card>();
+			NodeList items = base.getElementsByTagName("card");
+			
+            for (int i=0;i<items.getLength();i++){
+            	Node item = items.item(i);
+            	NodeList properties = item.getChildNodes();
+				Card.Builder cardBuilder = Card.getBuilder();
+            	for (int j=0; j < properties.getLength(); j++) {
+            		Node property = properties.item(j);
+            		String name = property.getNodeName().toLowerCase(Locale.getDefault());
+            		if (name.equals("title")) {
+            			cardBuilder.setTitle(property.getTextContent());
+            		} else if (name.equals("text")) {
+            			cardBuilder.setText(property.getTextContent());
+            		} else if (name.equals("motivationchange")) {
+            			cardBuilder.setMotivationChange(property.getTextContent());	            			
+            		} else {
+            			// Nothing
+            		}
+            	}
+            	
+            	result.add(cardBuilder.build());
+            }
+            
+            return result;
+		}
+	}
+
+}

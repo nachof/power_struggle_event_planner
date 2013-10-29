@@ -1,0 +1,125 @@
+<deck>
+	<standard>
+		<card>
+			<title>Director's Meeting</title>
+		</card>
+		<card>
+			<title>Bonus Payment</title>
+		</card>
+	</standard>
+	<other>
+		<card>
+			<title>Motivation</title>
+			<text>Vacation allowance is canceled.</text>
+			<motivationChange>-1</motivationChange>
+		</card>
+		<card>
+			<title>Motivation</title>
+			<text>After successful economy measures the board increases their income.</text>
+			<motivationChange>-1</motivationChange>
+		</card>
+		<card>
+			<title>Motivation</title>
+			<text>The broken soccer table in the lounge is not to be repaired.</text>
+			<motivationChange>-1</motivationChange>
+		</card>
+		<card>
+			<title>Motivation</title>
+			<text>Attendance recorders are to be implemented.</text>
+			<motivationChange>-1</motivationChange>
+		</card>
+		<card>
+			<title>Motivation</title>
+			<text>The opening hours of the coffee bar in the lounge are to be reduced to 12:30 to 1:00pm.</text>
+			<motivationChange>-1</motivationChange>
+		</card>
+		<card>
+			<title>Motivation</title>
+			<text>As of now, employees are to wear the company uniform.</text>
+			<motivationChange>-1</motivationChange>
+		</card>
+		<card>
+			<title>Motivation</title>
+			<text>The recreation room is relocated to the basement.</text>
+			<motivationChange>-1</motivationChange>
+		</card>
+		<card>
+			<title>Motivation</title>
+			<text>The management has a spa installed on the board level.</text>
+			<motivationChange>-1</motivationChange>
+		</card>
+		<card>
+			<title>Company Outing</title>
+			<text>No effect.</text>
+		</card>
+		<card>
+			<title>Moron Card</title>
+			<text>The divisional head communications pays 100.000 to each player.</text>
+		</card>
+		<card>
+			<title>Moron Card</title>
+			<text>The divisional head communications pays 100.000 to each player.</text>
+		</card>
+		<card>
+			<title>Moron Card</title>
+			<text>The divisional head communications pays 100.000 to each player.</text>
+		</card>
+		<card>
+			<title>Motivation</title>
+			<text>Members of the union are to be excluded from all soccer matches in the future.</text>
+			<motivationChange>-1</motivationChange>
+		</card>
+		<card>
+			<title>Motivation</title>
+			<text>According to company statistics, the majority of employees is very satisfied with the management.</text>
+			<motivationChange>-1</motivationChange>
+		</card>
+		<card>
+			<title>Motivation</title>
+			<text>The board's bill of expenses indicates visits to the red-light district.</text>
+			<motivationChange>-1</motivationChange>
+		</card>
+		<card>
+			<title>Motivation</title>
+			<text>The price for desserts in the cafeteria is raised.</text>
+			<motivationChange>-1</motivationChange>
+		</card>
+		<card>
+			<title>Motivation</title>
+			<text>As of now, overtime will no longer be compensated.</text>
+			<motivationChange>-1</motivationChange>
+		</card>
+		<card>
+			<title>Motivation</title>
+			<text>Some managers are in a rush to sell their company shares.</text>
+			<motivationChange>-2</motivationChange>
+		</card>
+		<card>
+			<title>Motivation</title>
+			<text>Working 49.5 hours/week without wage compensation is introduced.</text>
+			<motivationChange>-2</motivationChange>
+		</card>
+		<card>
+			<title>Motivation</title>
+			<text>The board of directors holds a Christmas party. All employees are invited.</text>
+			<motivationChange>1</motivationChange>
+		</card>
+		<card>
+			<title>Motivation</title>
+			<text>By court order the spa is to be opened to all employees.</text>
+			<motivationChange>2</motivationChange>
+		</card>
+		<card>
+			<title>Birthday</title>
+			<text>It's the senior president's birthday. The chairman and each divisional head (with the exception of communications) pay 100.000 for the gift to the company (the stock).</text>
+		</card>
+		<card>
+			<title>Board Scandal</title>
+			<text>The chairman of the board falls out of favor and is prematurely dismissed. As a compensation, he receives 200.000 from the stock. The privilege card chairman loses its validity and is turned face-down.</text>
+		</card>
+		<card>
+			<title>Summer Party</title>
+			<text>Each member of the board pays 100.000 to the company (the stock).</text>
+		</card>
+	</other>
+</deck>
