@@ -55,8 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:contentDescription="@string/move_up"
-        android:paddingRight="2dp"
-        android:src="@android:drawable/arrow_up_float" />
+        android:src="@drawable/ic_navigation_up" />
 
     <ImageView
         android:id="@+id/buttonDown"
@@ -64,7 +63,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:contentDescription="@string/move_down"
-        android:paddingLeft="2dp"
-        android:src="@android:drawable/arrow_down_float" />
+        android:src="@drawable/ic_navigation_down" />
 
 </LinearLayout>
