@@ -19,15 +19,6 @@ public class CardDisplayer {
 		TextView motivation = (TextView) rootView.findViewById(R.id.cardMotivation);		
 		
         displayMotivation(motivation, card);
-//        if (card.isStandardEvent()) {
-//        	if (cards.validOrder()) {
-//        		row.setBackgroundColor(context.getResources().getColor(R.color.standardEventBackgroundColor));
-//        	} else {
-//        		row.setBackgroundColor(context.getResources().getColor(R.color.standardEventBackgroundColorError));        		
-//        	}
-//        } else {
-//        	row.setBackgroundColor(context.getResources().getColor(R.color.defaultEventBackgroundColor));
-//        }
 
 	}
 	

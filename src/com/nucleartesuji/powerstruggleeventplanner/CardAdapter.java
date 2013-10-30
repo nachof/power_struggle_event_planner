@@ -38,6 +38,16 @@ public class CardAdapter extends ArrayAdapter<Card> {
         row.findViewById(R.id.buttonUp).setTag(position);
         row.findViewById(R.id.buttonDown).setTag(position);
         
+	    if (card.isStandardEvent()) {
+	    	if (cards.validOrder()) {
+	    		row.setBackgroundColor(context.getResources().getColor(R.color.standardEventBackgroundColor));
+	    	} else {
+	    		row.setBackgroundColor(context.getResources().getColor(R.color.standardEventBackgroundColorError));        		
+	    	}
+	    } else {
+	    	row.setBackgroundColor(context.getResources().getColor(R.color.defaultEventBackgroundColor));
+	    }
+        
         return row;
     }
 
