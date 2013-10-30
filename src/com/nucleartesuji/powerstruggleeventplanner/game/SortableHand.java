@@ -24,4 +24,16 @@ public class SortableHand extends ArrayList<Card> {
 		return this.indexOf(found);
 	}
 
+	public void moveCardUp(int position) {
+		Card item = get(position);
+		set(position, get(position - 1));
+		set(position - 1, item);
+	}
+
+	public void moveCardDown(int position) {
+		Card item = get(position);
+		set(position, get(position + 1));
+		set(position + 1, item);
+	}
+
 }

@@ -45,9 +45,7 @@ public class CardAdapter extends ArrayAdapter<Card> {
 				public void onClick(View button) {
 					int position = (Integer) button.getTag();
 					if (position < cards.size() - 1) {
-						Card item = cards.get(position);
-						cards.set(position, cards.get(position + 1));
-						cards.set(position + 1, item);
+						cards.moveCardDown(position);
 						notifyDataSetChanged();						
 					}
 				}            	
@@ -58,9 +56,7 @@ public class CardAdapter extends ArrayAdapter<Card> {
 				public void onClick(View button) {
 					int position = (Integer) button.getTag();
 					if (position > 0) {
-						Card item = cards.get(position);
-						cards.set(position, cards.get(position - 1));
-						cards.set(position - 1, item);
+						cards.moveCardUp(position);
 						notifyDataSetChanged();
 					}
 				}            	

@@ -37,9 +37,9 @@ public class Deck {
 	
 	public SortableHand getDrawnCards() {
 		SortableHand drawnCards = new SortableHand();
-		drawnCards.addAll(standardCards);
 		Collections.shuffle(otherCards);
 		drawnCards.addAll(otherCards.subList(0, 6));
+		drawnCards.addAll(standardCards);
 		return drawnCards;
 	}
 	
