@@ -1,6 +1,7 @@
 package com.nucleartesuji.powerstruggleeventplanner;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,6 +13,7 @@ import com.nucleartesuji.powerstruggleeventplanner.game.SortableHand;
 
 public class EventSortActivity extends Activity {
 
+	private static final String CARDS = "com.nucleartesuji.powerstruggleeventplanner.cards";
 	private SortableHand cards;
 
 	@Override
@@ -52,7 +54,10 @@ public class EventSortActivity extends Activity {
 
 	private void doConfirmOrder() {
 		if (cards.validOrder()) {
-			// TODO: Go to next activity, this one's done
+			Intent intent = new Intent(this, CardDisplayActivity.class);
+			
+			intent.putExtra(CARDS, cards);
+			startActivity(intent);
 		} else {
 			Toast.makeText(this, R.string.card_order_invalid, Toast.LENGTH_SHORT).show();
 		}

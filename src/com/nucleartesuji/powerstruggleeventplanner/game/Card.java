@@ -1,7 +1,11 @@
 package com.nucleartesuji.powerstruggleeventplanner.game;
 
-public class Card {
+import java.io.Serializable;
 
+public class Card implements Serializable {
+
+	private static final long serialVersionUID = -8450149522769530367L;
+	
 	public static final String DIRECTORS_MEETING = "DIRECTORS_MEETING";
 	public static final String BONUS_PAYMENT = "BONUS_PAYMENT";
 	String title;
