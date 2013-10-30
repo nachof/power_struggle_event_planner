@@ -14,6 +14,7 @@
     <string name="new_deck">New Deck</string>
     <string name="previous_card">Previous Card</string>
     <string name="next_card">Next Card</string>
+    <string name="no_more_cards">No more cards</string>
     
     <!-- "New Deck" button opens up a dialog -->
     <string name="new_deck_dialog_title">Start a new deck?</string>

@@ -2,7 +2,6 @@ package com.nucleartesuji.powerstruggleeventplanner;
 
 import com.nucleartesuji.powerstruggleeventplanner.game.Card;
 import com.nucleartesuji.powerstruggleeventplanner.game.SortableHand;
-
 import android.app.Activity;
 import android.content.Context;
 import android.view.View;

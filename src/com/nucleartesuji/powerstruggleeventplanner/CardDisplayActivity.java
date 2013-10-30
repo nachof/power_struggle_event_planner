@@ -1,9 +1,7 @@
 package com.nucleartesuji.powerstruggleeventplanner;
 
 import java.util.List;
-
 import com.nucleartesuji.powerstruggleeventplanner.game.Card;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -63,7 +61,7 @@ public class CardDisplayActivity extends Activity {
 			position++;
 			updateCardArea();
 		} else {
-			Toast.makeText(this, "No more cards", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, R.string.no_more_cards, Toast.LENGTH_SHORT).show();
 		}
 	}
 	
@@ -72,7 +70,7 @@ public class CardDisplayActivity extends Activity {
 			position--;
 			updateCardArea();
 		} else {
-			Toast.makeText(this, "No more cards", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, R.string.no_more_cards, Toast.LENGTH_SHORT).show();
 		}
 	}
 

@@ -1,7 +1,6 @@
 package com.nucleartesuji.powerstruggleeventplanner;
 
 import com.nucleartesuji.powerstruggleeventplanner.game.Card;
-
 import android.content.res.Resources;
 import android.view.View;
 import android.widget.TextView;
