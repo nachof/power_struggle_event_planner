@@ -13,7 +13,7 @@ import com.nucleartesuji.powerstruggleeventplanner.game.SortableHand;
 
 public class EventSortActivity extends Activity {
 
-	private static final String CARDS = "com.nucleartesuji.powerstruggleeventplanner.cards";
+	static final String CARDS = "com.nucleartesuji.powerstruggleeventplanner.cards";
 	private SortableHand cards;
 
 	@Override
