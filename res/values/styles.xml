@@ -19,7 +19,7 @@
     <color name="negativeMotivation">#FFAA0000</color>
     <color name="positiveMotivation">#FF00AA00</color>
     <color name="defaultEventBackgroundColor">#FFFFFFFF</color>
-    <color name="standardEventBackgroundColor">#FFCCFFCC</color>
-    <color name="standardEventBackgroundColorError">#FFFFCCCC</color>
+    <color name="standardEventBackgroundColor">#FFFFFFBB</color>
+    <color name="standardEventBackgroundColorError">#FFF7CCCC</color>
     
 </resources>

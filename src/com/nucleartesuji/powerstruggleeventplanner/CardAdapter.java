@@ -67,9 +67,7 @@ public class CardAdapter extends ArrayAdapter<Card> {
             });
             
             row.setTag(holder);
-        }
-        else
-        {
+        } else {
             holder = (CardHolder)row.getTag();
         }
         
