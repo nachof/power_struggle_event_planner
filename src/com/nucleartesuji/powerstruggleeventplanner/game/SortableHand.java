@@ -13,17 +13,6 @@ public class SortableHand extends ArrayList<Card> {
 		}
 	}
 
-	private int cardPosition(String idToSearch) {
-		Card found = null;
-		for (Card c: this) {
-			if (c.hasCardId(idToSearch)) {
-				found = c;
-				break;
-			}
-		}
-		return this.indexOf(found);
-	}
-
 	public void moveCardUp(int position) {
 		Card item = get(position);
 		set(position, get(position - 1));
@@ -34,6 +23,17 @@ public class SortableHand extends ArrayList<Card> {
 		Card item = get(position);
 		set(position, get(position + 1));
 		set(position + 1, item);
+	}
+
+	private int cardPosition(String idToSearch) {
+		Card found = null;
+		for (Card c: this) {
+			if (c.hasCardId(idToSearch)) {
+				found = c;
+				break;
+			}
+		}
+		return this.indexOf(found);
 	}
 
 }
