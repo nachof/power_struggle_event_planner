@@ -1,9 +1,9 @@
 <deck>
 	<standard>
-		<card>
+		<card id="DIRECTORS_MEETING">
 			<title>Director's Meeting</title>
 		</card>
-		<card>
+		<card id="BONUS_PAYMENT">
 			<title>Bonus Payment</title>
 		</card>
 	</standard>

@@ -2,10 +2,13 @@ package com.nucleartesuji.powerstruggleeventplanner.game;
 
 public class Card {
 
+	public static final String DIRECTORS_MEETING = "DIRECTORS_MEETING";
+	public static final String BONUS_PAYMENT = "BONUS_PAYMENT";
 	String title;
 	String text;
 	int motivationChange;
 	boolean standardEvent = false;
+	public String cardId;
 	
 	private Card(){		
 	}
@@ -35,6 +38,7 @@ public class Card {
 		private String title;
 		private int motivationChange;
 		private boolean standardEvent;
+		private String cardId;
 		
 		public Card build() {
 			Card c = new Card();
@@ -42,6 +46,7 @@ public class Card {
 			c.text = text;
 			c.motivationChange = motivationChange;
 			c.standardEvent = standardEvent;
+			c.cardId = cardId;
 					
 			return c;
 		}
@@ -62,5 +67,17 @@ public class Card {
 			this.standardEvent = e;
 		}
 
+		public void setCardId(String cardId) {
+			this.cardId = cardId;
+		}
+
+	}
+
+	public boolean hasCardId(String cardId) {
+		if (this.cardId != null && this.cardId.equals(cardId)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }

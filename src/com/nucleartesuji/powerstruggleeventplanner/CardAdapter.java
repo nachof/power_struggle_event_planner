@@ -5,7 +5,6 @@ import com.nucleartesuji.powerstruggleeventplanner.game.SortableHand;
 
 import android.app.Activity;
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -79,7 +78,6 @@ public class CardAdapter extends ArrayAdapter<Card> {
         holder.text.setText(card.getText());
         displayMotivation(holder.motivation, card);
         if (card.isStandardEvent()) {
-        	Log.d("TEST", "HELLO!!!!");
         	if (cards.validOrder()) {
         		row.setBackgroundColor(context.getResources().getColor(R.color.standardEventBackgroundColor));
         	} else {
