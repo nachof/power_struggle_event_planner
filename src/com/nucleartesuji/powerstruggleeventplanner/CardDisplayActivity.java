@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class CardDisplayActivity extends Activity {
@@ -60,5 +61,8 @@ public class CardDisplayActivity extends Activity {
 		View cardArea = findViewById(R.id.cardArea);
 		
 		new CardDisplayer(cardArea).display(card);
+		
+        TextView cardPosition = (TextView) cardArea.findViewById(R.id.cardPosition);
+        cardPosition.setText(getResources().getString(R.string.card_position, position+1, cards.size()));
 	}
 }

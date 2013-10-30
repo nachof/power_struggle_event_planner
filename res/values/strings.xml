@@ -11,5 +11,6 @@
     <string name="new_deck">New Deck</string>
     <string name="previous_card">Previous Card</string>
     <string name="next_card">Next Card</string>
-
+    <string name="card_position">Card %1$d/%2$d</string>
+    
 </resources>
