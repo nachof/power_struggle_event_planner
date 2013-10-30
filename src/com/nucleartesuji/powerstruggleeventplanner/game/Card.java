@@ -7,23 +7,7 @@ public class Card {
 	int motivationChange;
 	boolean standardEvent = false;
 	
-	public Card(String title, String text, int motivationChange) {
-		this(title, text, motivationChange, false);
-	}
-	
-	public Card(String title) {
-		this(title, "");
-	}
-	
-	public Card(String title, String text) {
-		this(title, text, 0);
-	}
-
-	public Card(String title, String text, int motivationChange, boolean standardEvent) {
-		this.title            = title;
-		this.text             = text;
-		this.motivationChange = motivationChange;
-		this.standardEvent    = standardEvent;
+	private Card(){		
 	}
 
 	public String getTitle() {
@@ -53,7 +37,13 @@ public class Card {
 		private boolean standardEvent;
 		
 		public Card build() {
-			return new Card(title, text, motivationChange, standardEvent);
+			Card c = new Card();
+			c.title = title;
+			c.text = text;
+			c.motivationChange = motivationChange;
+			c.standardEvent = standardEvent;
+					
+			return c;
 		}
 		
 		public void setText(String text) {

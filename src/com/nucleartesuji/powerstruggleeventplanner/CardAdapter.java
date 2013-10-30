@@ -1,13 +1,10 @@
 package com.nucleartesuji.powerstruggleeventplanner;
 
-import java.util.List;
-
 import com.nucleartesuji.powerstruggleeventplanner.game.Card;
 import com.nucleartesuji.powerstruggleeventplanner.game.SortableHand;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
