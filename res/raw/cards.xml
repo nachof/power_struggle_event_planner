@@ -3,10 +3,28 @@
 		<card id="BONUS_PAYMENT">
 			<title>Bonus Payment</title>
 			<text>Each player collects money according to the Bonus Payment table.</text>
+			<longText><![CDATA[
+			    <p>Pay from the stock to each player:
+			    <p>- <b>100,000</b> for each block of shares.
+				<p>- <b>100,000</b> for each department.
+				<p>- <b>200,000</b> for each main department.
+				<p>- <b>150,000</b> for each member of the board.
+				<p>- <b>300,000</b> for the chairman.
+			    <p>Don't forget to account for the <b>Controlling</b> privilege card!
+			]]></longText>
 		</card>
 		<card id="DIRECTORS_MEETING">
 			<title>Director's Meeting</title>
 			<text>This round is over. After the Director's Meeting, the next round begins.</text>
+			<longText><![CDATA[
+			    <p><b>1.</b> Dismiss the chairman.
+			    <p><b>2.</b> Elect a new chairman.
+			    <p><b>3.</b> Determine new divisional heads.
+			    <p><b>4.</b> Hand out privilege cards.
+			    <p><b>5.</b> Score influence points.
+			    <p><b>6.</b> Adjust motivation.
+			    <p><b>7.</b> Hand the app to the head of Communications and click on "New Deck".
+			]]></longText>
 		</card>		
 	</standard>
 	<other>

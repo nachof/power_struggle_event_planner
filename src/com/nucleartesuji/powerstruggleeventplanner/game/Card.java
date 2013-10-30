@@ -13,6 +13,8 @@ public class Card implements Serializable {
 	int motivationChange;
 	boolean standardEvent = false;
 	public String cardId;
+
+	public String longText;
 	
 	private Card(){		
 	}
@@ -43,6 +45,7 @@ public class Card implements Serializable {
 		private int motivationChange;
 		private boolean standardEvent;
 		private String cardId;
+		private String longText;
 		
 		public Card build() {
 			Card c = new Card();
@@ -51,6 +54,7 @@ public class Card implements Serializable {
 			c.motivationChange = motivationChange;
 			c.standardEvent = standardEvent;
 			c.cardId = cardId;
+			c.longText = longText;
 					
 			return c;
 		}
@@ -75,6 +79,10 @@ public class Card implements Serializable {
 			this.cardId = cardId;
 		}
 
+		public void setLongText(String longText) {
+			this.longText = longText;			
+		}
+
 	}
 
 	public boolean hasCardId(String cardId) {
@@ -83,5 +91,9 @@ public class Card implements Serializable {
 		} else {
 			return false;
 		}
+	}
+
+	public String getLongText() {
+		return longText;
 	}
 }

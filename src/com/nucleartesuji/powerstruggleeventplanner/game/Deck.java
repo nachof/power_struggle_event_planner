@@ -83,6 +83,8 @@ public class Deck {
 						cardBuilder.setText(property.getTextContent());
 					} else if (name.equals("motivationchange")) {
 						cardBuilder.setMotivationChange(property.getTextContent());	            			
+					} else if (name.equals("longtext")) {
+						cardBuilder.setLongText(property.getTextContent());	            			
 					} else {
 						// Nothing
 					}

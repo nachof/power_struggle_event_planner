@@ -1,7 +1,9 @@
 package com.nucleartesuji.powerstruggleeventplanner;
 
 import java.util.List;
+
 import com.nucleartesuji.powerstruggleeventplanner.game.Card;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -10,6 +12,8 @@ import android.content.Context;
 import android.content.DialogInterface.OnClickListener;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.text.Html;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
@@ -84,5 +88,13 @@ public class CardDisplayActivity extends Activity {
 		
         TextView cardPosition = (TextView) cardArea.findViewById(R.id.cardPosition);
         cardPosition.setText(getResources().getString(R.string.card_position, position+1, cards.size()));
+        
+        TextView longText = (TextView) cardArea.findViewById(R.id.cardLongText);
+        if (card.getLongText() != null) {
+            Log.d("HTML_TO_SHOW", card.getLongText());
+			longText.setText(Html.fromHtml(card.getLongText()));
+        } else {
+        	longText.setText("");
+        }
 	}
 }
