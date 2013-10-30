@@ -6,6 +6,12 @@ import com.nucleartesuji.powerstruggleeventplanner.game.Card;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
+import android.content.Context;
+import android.content.DialogInterface.OnClickListener;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
@@ -34,6 +40,22 @@ public class CardDisplayActivity extends Activity {
 	}
 	
 	public void onNewDeckClick(View button){
+		Builder builder = new AlertDialog.Builder(this);
+		final Context ctx = this;
+		OnClickListener listener = new OnClickListener() {			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				startActivity(new Intent(ctx, EventSortActivity.class));				
+			}
+		};
+		builder.setTitle(R.string.new_deck_dialog_title)
+			.setMessage(R.string.new_deck_dialog_message)
+			.setPositiveButton(R.string.new_deck_dialog_yes, listener)
+			.setNegativeButton(R.string.new_deck_dialog_no, null);
+		
+		builder.create().show();
+		
+		
 	}
 	
 	public void onNextCardClick(View button){
