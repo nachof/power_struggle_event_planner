@@ -2,9 +2,11 @@
 	<standard>
 		<card id="DIRECTORS_MEETING">
 			<title>Director's Meeting</title>
+			<text>This round is over. After the Director's Meeting, the next round begins.</text>
 		</card>
 		<card id="BONUS_PAYMENT">
 			<title>Bonus Payment</title>
+			<text>Each player collects money according to the Bonus Payment table.</text>
 		</card>
 	</standard>
 	<other>
