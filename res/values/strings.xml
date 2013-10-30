@@ -8,5 +8,8 @@
     <string name="card_order_invalid">Card order is invalid. Please verify it and try again.</string>
     <string name="title_activity_card_display">Event Deck</string>
     <string name="action_settings">Settings</string>
+    <string name="new_deck">New Deck</string>
+    <string name="previous_card">Previous Card</string>
+    <string name="next_card">Next Card</string>
 
 </resources>
