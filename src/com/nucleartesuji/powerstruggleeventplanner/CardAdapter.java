@@ -30,33 +30,8 @@ public class CardAdapter extends ArrayAdapter<Card> {
         
         if(row == null)
         {
-            LayoutInflater inflater = ((Activity)context).getLayoutInflater();
-            row = inflater.inflate(layoutResourceId, parent, false);
-            
             holder = new CardHolder();
-            holder.title = (TextView)row.findViewById(R.id.cardTitle);
-            holder.text = (TextView)row.findViewById(R.id.cardText);
-            holder.motivation = (TextView)row.findViewById(R.id.cardMotivation);
-            holder.buttonUp = (View)row.findViewById(R.id.buttonUp);
-            holder.buttonDown = (View)row.findViewById(R.id.buttonDown);
-            
-            holder.buttonDown.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View button) {
-					cards.moveCardDown((Integer) button.getTag());
-					notifyDataSetChanged();						
-				}            	
-            });
-
-            holder.buttonUp.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View button) {
-					cards.moveCardUp((Integer) button.getTag());
-					notifyDataSetChanged();
-				}            	
-            });
-            
-            row.setTag(holder);
+            row = generateView(parent, holder);
         } else {
             holder = (CardHolder)row.getTag();
         }
@@ -79,6 +54,37 @@ public class CardAdapter extends ArrayAdapter<Card> {
         
         return row;
     }
+
+	private View generateView(ViewGroup parent, CardHolder holder) {
+		View row;
+		LayoutInflater inflater = ((Activity)context).getLayoutInflater();
+		row = inflater.inflate(layoutResourceId, parent, false);
+		
+		holder.title = (TextView)row.findViewById(R.id.cardTitle);
+		holder.text = (TextView)row.findViewById(R.id.cardText);
+		holder.motivation = (TextView)row.findViewById(R.id.cardMotivation);
+		holder.buttonUp = (View)row.findViewById(R.id.buttonUp);
+		holder.buttonDown = (View)row.findViewById(R.id.buttonDown);
+		
+		holder.buttonDown.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View button) {
+				cards.moveCardDown((Integer) button.getTag());
+				notifyDataSetChanged();						
+			}            	
+		});
+
+		holder.buttonUp.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View button) {
+				cards.moveCardUp((Integer) button.getTag());
+				notifyDataSetChanged();
+			}            	
+		});
+		
+		row.setTag(holder);
+		return row;
+	}
 
 	private void displayMotivation(TextView view, Card card) {
 		if (card.getMotivationChange() == 0) {
