@@ -3,7 +3,9 @@ package com.nucleartesuji.powerstruggleeventplanner;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.nucleartesuji.powerstruggleeventplanner.game.Deck;
 import com.nucleartesuji.powerstruggleeventplanner.game.SortableHand;
@@ -37,4 +39,22 @@ public class EventSortActivity extends Activity {
 		return true;
 	}
 
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    // Handle presses on the action bar items
+	    switch (item.getItemId()) {
+	        case R.id.menuItemConfirmOrder:
+	            doConfirmOrder();
+	            return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
+	}
+
+	private void doConfirmOrder() {
+		if (cards.validOrder()) {
+			// TODO: Go to next activity, this one's done
+		} else {
+			Toast.makeText(this, R.string.card_order_invalid, Toast.LENGTH_SHORT).show();
+		}
+	}
 }
