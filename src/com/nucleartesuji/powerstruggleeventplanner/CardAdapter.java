@@ -43,22 +43,16 @@ public class CardAdapter extends ArrayAdapter<Card> {
             holder.buttonDown.setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View button) {
-					int position = (Integer) button.getTag();
-					if (position < cards.size() - 1) {
-						cards.moveCardDown(position);
-						notifyDataSetChanged();						
-					}
+					cards.moveCardDown((Integer) button.getTag());
+					notifyDataSetChanged();						
 				}            	
             });
 
             holder.buttonUp.setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View button) {
-					int position = (Integer) button.getTag();
-					if (position > 0) {
-						cards.moveCardUp(position);
-						notifyDataSetChanged();
-					}
+					cards.moveCardUp((Integer) button.getTag());
+					notifyDataSetChanged();
 				}            	
             });
             
