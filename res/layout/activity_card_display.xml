@@ -80,7 +80,7 @@
             android:id="@+id/buttonPreviousCard"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:onClick="onPreviousCardClick"
             android:text="@string/previous_card" />
@@ -89,7 +89,7 @@
             android:id="@+id/buttonNewDeck"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:onClick="onNewDeckClick"
             android:text="@string/new_deck" />
@@ -98,7 +98,7 @@
             android:id="@+id/buttonNextCard"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:onClick="onNextCardClick"
             android:text="@string/next_card" />
