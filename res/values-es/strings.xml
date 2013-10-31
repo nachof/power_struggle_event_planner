@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Power Struggle: Planificador de Eventos</string>
+    <string name="move_up">Mover Hacia Arriba</string>
+    <string name="move_down">Mover Hacia Abajo</string>
+    <string name="confirm_order">Confirmar Orden de Cartas</string>
+    <string name="card_order_invalid">El orden de las cartas es incorrecto. Por favor verificalo e intentá de nuevo.</string>
+    
+    <!-- DisplayCardActivity -->
+    <string name="title_activity_card_display">Mazo de Eventos</string>
+    <string name="card_position">Carta %1$d/%2$d</string>
+    <!-- Buttons -->
+    <string name="new_deck">Nuevo Mazo</string>
+    <string name="previous_card">Carta Anterior</string>
+    <string name="next_card">Siguiente Carta</string>
+    <string name="no_more_cards">No hay más cartas</string>
+    
+    <!-- "New Deck" button opens up a dialog -->
+    <string name="new_deck_dialog_title">¿Comenzar un nuevo mazo?</string>
+    <string name="new_deck_dialog_message">El mazo actual va a ser borrado. No deberías hacer esto a menos que ya hayas llegado a la Reunión de Directorio.</string>
+    <string name="new_deck_dialog_yes">Empezar Nuevo Mazo</string>
+    <string name="new_deck_dialog_no">Mantener Mazo Actual</string>
+    
+</resources>

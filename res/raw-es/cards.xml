@@ -1,0 +1,145 @@
+<deck>
+	<standard>
+		<card id="BONUS_PAYMENT">
+			<title>Pago de Bonos</title>
+			<text>Cada jugador recibe dinero de acuerdo a la tabla de Pago de Bonos.</text>
+			<longText><![CDATA[
+			    <p>Pagá de la pila a cada jugador:
+			    <p>- <b>100.000</b> por cada bloque de acciones.
+				<p>- <b>100.000</b> por cada departamento.
+				<p>- <b>200.000</b> por cada departamento principal.
+				<p>- <b>150.000</b> por cada miembro del directorio.
+				<p>- <b>300.000</b> por el presidente.
+			    <p>No te olvides de aplicar el privilegio de la carta de <b>Controlling</b>.
+			]]></longText>
+		</card>
+		<card id="DIRECTORS_MEETING">
+			<title>Reunión de Directorio</title>
+			<text>Termina la ronda. Luego de la reunión de Directorio, comienza la nueva ronda.</text>
+			<longText><![CDATA[
+			    <p><b>1.</b> Despedir al presidente.
+			    <p><b>2.</b> Elegir nuevo presidente.
+			    <p><b>3.</b> Determinar jefes de división.
+			    <p><b>4.</b> Distribuir cartas de privilegio.
+			    <p><b>5.</b> Registrar puntos de influencia.
+			    <p><b>6.</b> Ajustar motivación.
+			    <p><b>7.</b> Dale la aplicación al jefe de Comunicaciones y tocá en "Nuevo Mazo"
+			]]></longText>
+		</card>		
+	</standard>
+	<other>
+		<card>
+			<title>Motivación</title>
+			<text>Se cancela el salario vacacional.</text>
+			<motivationChange>-1</motivationChange>
+		</card>
+		<card>
+			<title>Motivación</title>
+			<text>Luego de medidas económicas exitosas los miembros de la junta incrementan su salario.</text>
+			<motivationChange>-1</motivationChange>
+		</card>
+		<card>
+			<title>Motivación</title>
+			<text>El futbolito roto de la cantina no va a ser reparado.</text>
+			<motivationChange>-1</motivationChange>
+		</card>
+		<card>
+			<title>Motivación</title>
+			<text>Se implementará el uso de tarjetas de horario.</text>
+			<motivationChange>-1</motivationChange>
+		</card>
+		<card>
+			<title>Motivación</title>
+			<text>El horario de apertura de la cafetería será reducido de 12:30 a 1:00pm.</text>
+			<motivationChange>-1</motivationChange>
+		</card>
+		<card>
+			<title>Motivación</title>
+			<text>A partir de ahora, todos los empleados deberán usar el uniforme de la compañía.</text>
+			<motivationChange>-1</motivationChange>
+		</card>
+		<card>
+			<title>Motivación</title>
+			<text>La sala de recreación será reubicada en el sótano.</text>
+			<motivationChange>-1</motivationChange>
+		</card>
+		<card>
+			<title>Motivación</title>
+			<text>La gerencia instala un spa en la planta de la junta.</text>
+			<motivationChange>-1</motivationChange>
+		</card>
+		<card>
+			<title>Salida de la compañía</title>
+			<text>Ningún efecto.</text>
+		</card>
+		<card>
+			<title>Carta de imbécil</title>
+			<text>El jefe de división de Comunicaciones paga 100.000 a cada jugador.</text>
+		</card>
+		<card>
+			<title>Carta de imbécil</title>
+			<text>El jefe de división de Comunicaciones paga 100.000 a cada jugador.</text>
+		</card>
+		<card>
+			<title>Carta de imbécil</title>
+			<text>El jefe de división de Comunicaciones paga 100.000 a cada jugador.</text>
+		</card>
+		<card>
+			<title>Motivación</title>
+			<text>Los miembros del sindicato serán excluídos de todos los partidos de fútbol en el futuro.</text>
+			<motivationChange>-1</motivationChange>
+		</card>
+		<card>
+			<title>Motivación</title>
+			<text>De acuerdo a las estadísticas de la compañía, la mayoría de los empleados está muy satisfechos con la gerencia.</text>
+			<motivationChange>-1</motivationChange>
+		</card>
+		<card>
+			<title>Motivación</title>
+			<text>The board's bill of expenses indicates visits to the red-light district.</text>
+			<motivationChange>-1</motivationChange>
+		</card>
+		<card>
+			<title>Motivación</title>
+			<text>Aumenta el precio de los postres en la cafetería.</text>
+			<motivationChange>-1</motivationChange>
+		</card>
+		<card>
+			<title>Motivación</title>
+			<text>A partir de este momento, las horas extras ya no serán pagas.</text>
+			<motivationChange>-1</motivationChange>
+		</card>
+		<card>
+			<title>Motivación</title>
+			<text>Algunos gerentes están apurados por vender sus acciones de la compañía.</text>
+			<motivationChange>-2</motivationChange>
+		</card>
+		<card>
+			<title>Motivación</title>
+			<text>La semana laboral se incrementará a 49 horas y media semanales, sin compensación salarial.</text>
+			<motivationChange>-2</motivationChange>
+		</card>
+		<card>
+			<title>Motivación</title>
+			<text>La junta de directorio hace una fiesta de navidad. Todos los empleados están invitados.</text>
+			<motivationChange>1</motivationChange>
+		</card>
+		<card>
+			<title>Motivación</title>
+			<text>Por orden judicial, el spa será abierto a todos los empleados.</text>
+			<motivationChange>2</motivationChange>
+		</card>
+		<card>
+			<title>Cumpleaños</title>
+			<text>Es el cumpleaños del dueño de la compañía. El presidente y cada jefe de división (excepto Comunicaciones) pagan 100.000 por el regalo a la compañía.</text>
+		</card>
+		<card>
+			<title>Escándalo en la Junta</title>
+			<text>El presidente de la junta cae en desgracia y es despedido prematuramente. Como compensación, recibe 200.000 de la compañía. La carta de privilegio de presidente pierde validez y es dada vuelta.</text>
+		</card>
+		<card>
+			<title>Fiesta de Verano</title>
+			<text>Cada miembro de la junta paga 100.000 a la compañía.</text>
+		</card>
+	</other>
+</deck>
