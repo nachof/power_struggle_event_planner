@@ -13,7 +13,6 @@ import android.content.DialogInterface.OnClickListener;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.text.Html;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
@@ -91,7 +90,6 @@ public class CardDisplayActivity extends Activity {
         
         TextView longText = (TextView) cardArea.findViewById(R.id.cardLongText);
         if (card.getLongText() != null) {
-            Log.d("HTML_TO_SHOW", card.getLongText());
 			longText.setText(Html.fromHtml(card.getLongText()));
         } else {
         	longText.setText("");
