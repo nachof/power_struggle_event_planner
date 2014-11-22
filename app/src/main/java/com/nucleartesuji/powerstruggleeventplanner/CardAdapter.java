@@ -1,83 +1,101 @@
 package com.nucleartesuji.powerstruggleeventplanner;
 
-import com.nucleartesuji.powerstruggleeventplanner.game.Card;
-import com.nucleartesuji.powerstruggleeventplanner.game.SortableHand;
-import android.app.Activity;
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-public class CardAdapter extends ArrayAdapter<Card> {
-	Context context;
-	int layoutResourceId;
-	SortableHand cards;
+import com.nucleartesuji.powerstruggleeventplanner.game.Card;
+import com.nucleartesuji.powerstruggleeventplanner.game.SortableHand;
 
-	public CardAdapter(Context context, int layoutResourceId, SortableHand cards) {
-		super(context, layoutResourceId, cards);
-		this.context = context;
-		this.layoutResourceId = layoutResourceId;
-		this.cards = cards;
-	}
-	
-    public View getView(int position, View convertView, ViewGroup parent) {
-        View row = convertView;
-        
-        if(row == null)
-        {
-            row = generateView(parent);
-        }
-        
-        Card card = cards.get(position);
-        
-        new CardDisplayer(row).display(card);
-        
-        row.findViewById(R.id.buttonUp).setTag(position);
-        row.findViewById(R.id.buttonDown).setTag(position);
-        
-	    if (card.isStandardEvent()) {
-	    	if (cards.validOrder()) {
-	    		row.setBackgroundColor(context.getResources().getColor(R.color.standardEventBackgroundColor));
-	    	} else {
-	    		row.setBackgroundColor(context.getResources().getColor(R.color.standardEventBackgroundColorError));        		
-	    	}
-	    } else {
-	    	row.setBackgroundColor(context.getResources().getColor(R.color.defaultEventBackgroundColor));
-	    }
-        
-        return row;
+public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
+    private final Context context;
+    private final SortableHand cards;
+
+    public CardAdapter(Context context, SortableHand cards) {
+        this.context = context;
+        this.cards = cards;
     }
 
-	private View generateView(ViewGroup parent) {
-		View row = ((Activity)context).getLayoutInflater().inflate(layoutResourceId, parent, false);
-		
-		row.findViewById(R.id.buttonDown).setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View button) {
-				cards.moveCardDown((Integer) button.getTag());
-				notifyDataSetChanged();						
-			}            	
-		});
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.card_item, parent, false);
+        return new ViewHolder(v);
+    }
 
-		row.findViewById(R.id.buttonUp).setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View button) {
-				cards.moveCardUp((Integer) button.getTag());
-				notifyDataSetChanged();
-			}            	
-		});
-		
-		return row;
-	}
+    @Override
+    public void onBindViewHolder(ViewHolder holder, final int position) {
+        Card card = cards.get(position);
 
-	static class CardHolder
-    {
-        TextView title;
-        TextView text;
-        TextView motivation;
-        View buttonUp;
-        View buttonDown;
+        holder.title.setText(card.getTitle());
+        holder.text.setText(card.getText());
+
+        if (card.getMotivationChange() == 0) {
+            holder.motivation.setVisibility(View.GONE);
+        } else {
+            holder.motivation.setVisibility(View.VISIBLE);
+            if (card.getMotivationChange() > 0) {
+                holder.motivation.setText("+" + card.getMotivationChange());
+                holder.motivation.setTextColor(context.getResources().getColor(R.color.positiveMotivation));
+            } else {
+                holder.motivation.setText(Integer.valueOf(card.getMotivationChange()).toString());
+                holder.motivation.setTextColor(context.getResources().getColor(R.color.negativeMotivation));
+            }
+        }
+
+        holder.buttonUp.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cards.moveCardUp(position);
+                notifyDataSetChanged();
+            }
+        });
+
+        holder.buttonDown.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cards.moveCardDown(position);
+                notifyDataSetChanged();
+            }
+        });
+
+        if (card.isStandardEvent()) {
+            if (cards.validOrder()) {
+                holder.row.setBackgroundColor(context.getResources().getColor(R.color.standardEventBackgroundColor));
+            } else {
+                holder.row.setBackgroundColor(context.getResources().getColor(R.color.standardEventBackgroundColorError));
+            }
+        } else {
+            holder.row.setBackgroundColor(context.getResources().getColor(R.color.defaultEventBackgroundColor));
+        }
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return cards.size();
+    }
+
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        public TextView title;
+        public TextView text;
+        public TextView motivation;
+        public View buttonUp;
+        public View buttonDown;
+        public View row;
+
+        public ViewHolder(View itemView) {
+            super(itemView);
+            title = (TextView) itemView.findViewById(R.id.cardTitle);
+            motivation = (TextView) itemView.findViewById(R.id.cardMotivation);
+            text = (TextView) itemView.findViewById(R.id.cardText);
+            buttonDown = itemView.findViewById(R.id.buttonDown);
+            buttonUp = itemView.findViewById(R.id.buttonUp);
+            row = itemView;
+        }
     }
 }

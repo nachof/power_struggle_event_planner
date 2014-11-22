@@ -3,6 +3,9 @@ package com.nucleartesuji.powerstruggleeventplanner;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
@@ -17,15 +20,17 @@ public class EventSortActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_event_sort);
 		
 		loadCardsData();
 		
 		cards = Deck.getInstance().getDrawnCards();
 		
-		CardAdapter adapter = new CardAdapter(this, R.layout.card_item, cards);
-		ListView cardList = (ListView) findViewById(R.id.cardList);
+		CardAdapter adapter = new CardAdapter(this, cards);
+        RecyclerView cardList = (RecyclerView) findViewById(R.id.cardList);
+        cardList.setLayoutManager(new LinearLayoutManager(this));
+        cardList.setItemAnimator(new DefaultItemAnimator());
 		cardList.setAdapter(adapter);
 	}
 

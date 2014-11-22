@@ -1,23 +1,25 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 14
+    compileSdkVersion 21
     buildToolsVersion "20.0.0"
-
     defaultConfig {
         applicationId "com.nucleartesuji.powerstruggleeventplanner"
-        minSdkVersion 11
+        minSdkVersion 14
         targetSdkVersion 18
     }
-
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+    productFlavors {
+    }
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:18.0.0'
+    compile 'com.android.support:recyclerview-v7:21.0.0'
+    compile 'com.android.support:appcompat-v7:21.0.0'
+    compile 'com.android.support:cardview-v7:21.0.0'
 }

@@ -1,5 +1,4 @@
 <resources>
-
     <!--
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
@@ -21,5 +20,4 @@
     <color name="defaultEventBackgroundColor">#FFFFFFFF</color>
     <color name="standardEventBackgroundColor">#FFFFFFBB</color>
     <color name="standardEventBackgroundColorError">#FFF7CCCC</color>
-    
 </resources>
