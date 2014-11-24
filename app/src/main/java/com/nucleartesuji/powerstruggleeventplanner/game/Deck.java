@@ -79,16 +79,22 @@ public class Deck {
                 for (int j=0; j < properties.getLength(); j++) {
                     Node property = properties.item(j);
                     String name = property.getNodeName().toLowerCase(Locale.getDefault());
-                    if (name.equals("title")) {
-                        cardBuilder.setTitle(property.getTextContent());
-                    } else if (name.equals("text")) {
-                        cardBuilder.setText(property.getTextContent());
-                    } else if (name.equals("motivationchange")) {
-                        cardBuilder.setMotivationChange(property.getTextContent());
-                    } else if (name.equals("longtext")) {
-                        cardBuilder.setLongText(property.getTextContent());
-                    } else {
-                        // Nothing
+                    switch (name) {
+                        case "title":
+                            cardBuilder.setTitle(property.getTextContent());
+                            break;
+                        case "text":
+                            cardBuilder.setText(property.getTextContent());
+                            break;
+                        case "motivationchange":
+                            cardBuilder.setMotivationChange(property.getTextContent());
+                            break;
+                        case "longtext":
+                            cardBuilder.setLongText(property.getTextContent());
+                            break;
+                        default:
+                            // Nothing
+                            break;
                     }
                 }
                 Node cardIdNode;
