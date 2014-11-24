@@ -69,7 +69,7 @@ public class Deck {
         private List<Card> readCardsUnderNodeNamed(String baseTag, boolean isStandardEvent) {
             Element root = dom.getDocumentElement();
             Element cardsRoot = (Element) root.getElementsByTagName(baseTag).item(0);
-            List<Card> result1 = new ArrayList<Card>();
+            List<Card> result = new ArrayList<Card>();
             NodeList items = cardsRoot.getElementsByTagName("card");
 
             for (int i=0;i<items.getLength();i++){
@@ -96,9 +96,8 @@ public class Deck {
                     cardBuilder.setCardId(cardIdNode.getNodeValue());
                 }
                 cardBuilder.setStandardEvent(isStandardEvent);
-                result1.add(cardBuilder.build());
+                result.add(cardBuilder.build());
             }
-            List<Card> result = result1;
             return result;
         }
     }
