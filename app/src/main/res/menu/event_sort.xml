@@ -1,4 +1,4 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item android:id="@+id/menuItemConfirmOrder" android:showAsAction="always" android:title="@string/confirm_order" android:icon="@drawable/ic_action_accept"></item>
+    <item android:id="@+id/menuItemConfirmOrder" android:showAsAction="always" android:title="@string/confirm_order" android:icon="@drawable/ic_action_accept"/>
 
 </menu>
