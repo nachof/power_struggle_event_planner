@@ -5,8 +5,8 @@ import android.content.res.Resources;
 import android.view.View;
 import android.widget.TextView;
 
-public class CardDisplayer {
-    private View rootView;
+class CardDisplayer {
+    private final View rootView;
 
     public CardDisplayer(View cardArea) {
         rootView = cardArea;

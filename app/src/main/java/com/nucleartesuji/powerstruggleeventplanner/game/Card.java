@@ -16,7 +16,7 @@ public class Card implements Serializable {
 
     private String cardId;
 
-    public String longText;
+    private String longText;
 
     private Card(){
     }
@@ -41,7 +41,7 @@ public class Card implements Serializable {
         return standardEvent;
     }
 
-    public String getCardId() {
+    String getCardId() {
         if (cardId != null) {
             return cardId;
         } else {

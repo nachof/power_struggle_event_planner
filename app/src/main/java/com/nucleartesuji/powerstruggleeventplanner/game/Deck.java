@@ -49,11 +49,7 @@ public class Deck {
         public Loader(InputStream dataStream) {
             try {
                 dom = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(dataStream);
-            } catch (SAXException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (ParserConfigurationException e) {
+            } catch (SAXException | ParserConfigurationException | IOException e) {
                 e.printStackTrace();
             }
         }
@@ -69,7 +65,7 @@ public class Deck {
         private List<Card> readCardsUnderNodeNamed(String baseTag, boolean isStandardEvent) {
             Element root = dom.getDocumentElement();
             Element cardsRoot = (Element) root.getElementsByTagName(baseTag).item(0);
-            List<Card> result = new ArrayList<Card>();
+            List<Card> result = new ArrayList<>();
             NodeList items = cardsRoot.getElementsByTagName("card");
 
             for (int i=0;i<items.getLength();i++){

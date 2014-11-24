@@ -100,11 +100,11 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView title;
-        public TextView text;
-        public TextView motivation;
-        public View buttonUp;
-        public View buttonDown;
+        public final TextView title;
+        public final TextView text;
+        public final TextView motivation;
+        public final View buttonUp;
+        public final View buttonDown;
 
         public ViewHolder(View itemView) {
             super(itemView);
