@@ -96,11 +96,7 @@ public class Card implements Serializable {
     }
 
     public boolean hasCardId(String cardId) {
-        if (this.getCardId() != null && this.getCardId().equals(cardId)) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.getCardId() != null && this.getCardId().equals(cardId);
     }
 
     public String getLongText() {

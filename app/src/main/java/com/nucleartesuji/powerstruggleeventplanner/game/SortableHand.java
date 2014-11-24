@@ -6,11 +6,7 @@ public class SortableHand extends ArrayList<Card> {
     private static final long serialVersionUID = 1L;
 
     public boolean validOrder() {
-        if (getCardPosition(Card.DIRECTORS_MEETING) < 4 || getCardPosition(Card.DIRECTORS_MEETING) < getCardPosition(Card.BONUS_PAYMENT)) {
-            return false;
-        } else {
-            return true;
-        }
+        return !(getCardPosition(Card.DIRECTORS_MEETING) < 4 || getCardPosition(Card.DIRECTORS_MEETING) < getCardPosition(Card.BONUS_PAYMENT));
     }
 
     public void moveCardUp(int position) {
