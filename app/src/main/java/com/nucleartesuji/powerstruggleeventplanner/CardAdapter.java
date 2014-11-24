@@ -1,6 +1,7 @@
 package com.nucleartesuji.powerstruggleeventplanner;
 
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -69,14 +70,15 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
             }
         });
 
+        CardView cardView = (CardView) holder.itemView;
         if (card.isStandardEvent()) {
             if (cards.validOrder()) {
-                holder.itemView.setBackgroundColor(context.getResources().getColor(R.color.standardEventBackgroundColor));
+                cardView.setCardBackgroundColor(context.getResources().getColor(R.color.standardEventBackgroundColor));
             } else {
-                holder.itemView.setBackgroundColor(context.getResources().getColor(R.color.standardEventBackgroundColorError));
+                cardView.setCardBackgroundColor(context.getResources().getColor(R.color.standardEventBackgroundColorError));
             }
         } else {
-            holder.itemView.setBackgroundColor(context.getResources().getColor(R.color.defaultEventBackgroundColor));
+            cardView.setCardBackgroundColor(context.getResources().getColor(R.color.defaultEventBackgroundColor));
         }
 
     }
