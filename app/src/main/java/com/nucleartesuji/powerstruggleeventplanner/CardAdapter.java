@@ -70,13 +70,24 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
             }
         });
 
-        CardView cardView = (CardView) holder.itemView;
+        final CardView cardView = (CardView) holder.itemView;
         if (card.isStandardEvent()) {
             if (cards.validOrder()) {
                 cardView.setCardBackgroundColor(context.getResources().getColor(R.color.standardEventBackgroundColor));
             } else {
                 cardView.setCardBackgroundColor(context.getResources().getColor(R.color.standardEventBackgroundColorError));
             }
+            registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
+                @Override
+                public void onItemRangeMoved(int fromPosition, int toPosition, int itemCount) {
+                    super.onItemRangeMoved(fromPosition, toPosition, itemCount);
+                    if (cards.validOrder()) {
+                        cardView.setCardBackgroundColor(context.getResources().getColor(R.color.standardEventBackgroundColor));
+                    } else {
+                        cardView.setCardBackgroundColor(context.getResources().getColor(R.color.standardEventBackgroundColorError));
+                    }
+                }
+            });
         } else {
             cardView.setCardBackgroundColor(context.getResources().getColor(R.color.defaultEventBackgroundColor));
         }
