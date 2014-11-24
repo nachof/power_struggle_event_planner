@@ -6,7 +6,7 @@ public class SortableHand extends ArrayList<Card> {
 	private static final long serialVersionUID = 1L;
 
 	public boolean validOrder() {
-		if (cardPosition(Card.DIRECTORS_MEETING) < 4 || cardPosition(Card.DIRECTORS_MEETING) < cardPosition(Card.BONUS_PAYMENT)) {
+		if (getCardPosition(Card.DIRECTORS_MEETING) < 4 || getCardPosition(Card.DIRECTORS_MEETING) < getCardPosition(Card.BONUS_PAYMENT)) {
 			return false;
 		} else {
 			return true;
@@ -29,7 +29,7 @@ public class SortableHand extends ArrayList<Card> {
 		}
 	}
 
-	private int cardPosition(String idToSearch) {
+	public int getCardPosition(String idToSearch) {
 		Card found = null;
 		for (Card c: this) {
 			if (c.hasCardId(idToSearch)) {
@@ -39,5 +39,9 @@ public class SortableHand extends ArrayList<Card> {
 		}
 		return this.indexOf(found);
 	}
+
+    public int getCardPosition(Card cardToSearch) {
+        return getCardPosition(cardToSearch.getCardId());
+    }
 
 }

@@ -2,6 +2,7 @@ package com.nucleartesuji.powerstruggleeventplanner.game;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -82,9 +83,9 @@ public class Deck {
 					} else if (name.equals("text")) {
 						cardBuilder.setText(property.getTextContent());
 					} else if (name.equals("motivationchange")) {
-						cardBuilder.setMotivationChange(property.getTextContent());	            			
+						cardBuilder.setMotivationChange(property.getTextContent());
 					} else if (name.equals("longtext")) {
-						cardBuilder.setLongText(property.getTextContent());	            			
+						cardBuilder.setLongText(property.getTextContent());
 					} else {
 						// Nothing
 					}
@@ -92,7 +93,7 @@ public class Deck {
 				Node cardIdNode;
 				if ((cardIdNode = item.getAttributes().getNamedItem("id")) != null){
 					cardBuilder.setCardId(cardIdNode.getNodeValue());
-				}
+                }
 				cardBuilder.setStandardEvent(isStandardEvent);
 				result1.add(cardBuilder.build());
 			}

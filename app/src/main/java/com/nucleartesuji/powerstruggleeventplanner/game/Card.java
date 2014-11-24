@@ -8,11 +8,13 @@ public class Card implements Serializable {
 	
 	public static final String DIRECTORS_MEETING = "DIRECTORS_MEETING";
 	public static final String BONUS_PAYMENT = "BONUS_PAYMENT";
-	String title;
-	String text;
-	int motivationChange;
-	boolean standardEvent = false;
-	public String cardId;
+
+	private String title;
+	private String text;
+	private int motivationChange;
+	private boolean standardEvent = false;
+
+    private String cardId;
 
 	public String longText;
 	
@@ -38,8 +40,16 @@ public class Card implements Serializable {
 	public boolean isStandardEvent() {
 		return standardEvent;
 	}
-	
-	public static class Builder {
+
+    public String getCardId() {
+        if (cardId != null) {
+            return cardId;
+        } else {
+            return Integer.toString(hashCode());
+        }
+    }
+
+    public static class Builder {
 		private String text;
 		private String title;
 		private int motivationChange;
@@ -86,7 +96,7 @@ public class Card implements Serializable {
 	}
 
 	public boolean hasCardId(String cardId) {
-		if (this.cardId != null && this.cardId.equals(cardId)) {
+		if (this.getCardId() != null && this.getCardId().equals(cardId)) {
 			return true;
 		} else {
 			return false;

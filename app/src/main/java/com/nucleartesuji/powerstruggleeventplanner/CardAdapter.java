@@ -29,7 +29,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        Card card = cards.get(position);
+        final Card card = cards.get(position);
 
         holder.title.setText(card.getTitle());
         holder.text.setText(card.getText());
@@ -50,27 +50,33 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         holder.buttonUp.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                cards.moveCardUp(position);
-                notifyDataSetChanged();
+                int position = cards.getCardPosition(card);
+                if (position > 0) {
+                    cards.moveCardUp(position);
+                    notifyItemMoved(position, position - 1);
+                }
             }
         });
 
         holder.buttonDown.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                cards.moveCardDown(position);
-                notifyDataSetChanged();
+                int position = cards.getCardPosition(card);
+                if (position < cards.size() - 1) {
+                    cards.moveCardDown(position);
+                    notifyItemMoved(position, position + 1);
+                }
             }
         });
 
         if (card.isStandardEvent()) {
             if (cards.validOrder()) {
-                holder.row.setBackgroundColor(context.getResources().getColor(R.color.standardEventBackgroundColor));
+                holder.itemView.setBackgroundColor(context.getResources().getColor(R.color.standardEventBackgroundColor));
             } else {
-                holder.row.setBackgroundColor(context.getResources().getColor(R.color.standardEventBackgroundColorError));
+                holder.itemView.setBackgroundColor(context.getResources().getColor(R.color.standardEventBackgroundColorError));
             }
         } else {
-            holder.row.setBackgroundColor(context.getResources().getColor(R.color.defaultEventBackgroundColor));
+            holder.itemView.setBackgroundColor(context.getResources().getColor(R.color.defaultEventBackgroundColor));
         }
 
     }
@@ -86,7 +92,6 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         public TextView motivation;
         public View buttonUp;
         public View buttonDown;
-        public View row;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -95,7 +100,6 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
             text = (TextView) itemView.findViewById(R.id.cardText);
             buttonDown = itemView.findViewById(R.id.buttonDown);
             buttonUp = itemView.findViewById(R.id.buttonUp);
-            row = itemView;
         }
     }
 }
