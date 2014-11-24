@@ -29,7 +29,7 @@ public class SortableHand extends ArrayList<Card> {
 		}
 	}
 
-	public int getCardPosition(String idToSearch) {
+	private int getCardPosition(String idToSearch) {
 		Card found = null;
 		for (Card c: this) {
 			if (c.hasCardId(idToSearch)) {
@@ -39,9 +39,4 @@ public class SortableHand extends ArrayList<Card> {
 		}
 		return this.indexOf(found);
 	}
-
-    public int getCardPosition(Card cardToSearch) {
-        return getCardPosition(cardToSearch.getCardId());
-    }
-
 }

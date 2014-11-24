@@ -28,7 +28,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         final Card card = cards.get(position);
 
         holder.title.setText(card.getTitle());
@@ -50,7 +50,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         holder.buttonUp.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                int position = cards.getCardPosition(card);
+                int position = holder.getPosition();
                 if (position > 0) {
                     cards.moveCardUp(position);
                     notifyItemMoved(position, position - 1);
@@ -61,7 +61,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         holder.buttonDown.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                int position = cards.getCardPosition(card);
+                int position = holder.getPosition();
                 if (position < cards.size() - 1) {
                     cards.moveCardDown(position);
                     notifyItemMoved(position, position + 1);
